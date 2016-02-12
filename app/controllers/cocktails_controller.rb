@@ -30,3 +30,6 @@ class CocktailsController < ApplicationController
     params.require(:cocktail).permit(:name)
   end
 end
+
+
+#link_to("Delete, cocktail_dose_path(@cocktail, dose), method: :delete")

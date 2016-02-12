@@ -7,8 +7,9 @@ class DosesController < ApplicationController
   end
 
   def create
-    @dose = Dose.new(dose_params)
-    @dose.cocktail = @cocktail
+    # @dose = Dose.new(dose_params)
+    # @dose.cocktail = @cocktail
+    @dose = @cocktail.doses.new(dose_params) #ça crée une nouvelle dose avec le paramètre Cocktail_id renseigné.
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -18,9 +19,10 @@ class DosesController < ApplicationController
 
   def destroy
     @dose = Dose.find(params[:id])
-    @cocktail = @dose.cocktail
+    # @cocktail = @dose.cocktail
     @dose.destroy
-    redirect_to cocktail_path(@cocktail)
+    # redirect_to cocktail_path(@cocktail)
+    redirect_to :back
   end
 
   private
