@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'cocktails#index'
-  resources :cocktails, only: [:index, :show, :new, :create] do
+  resources :cocktails, only: [:index, :show, :new, :create, :update, :edit] do
     resources :doses, only: [:new, :create]
   end
 
   delete "doses/:id" => "doses#destroy", as: :dose
+  get 'cocktails/:id/crop' => "cocktails#crop", as: :crop
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

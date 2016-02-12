@@ -3,7 +3,8 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <p id="notice"><%= notice %></p>
       <h2 class="text-center"><%= @cocktail.name %></h2>
-
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, x: @cocktail.x , y: @cocktail.y, :crop => :crop %>
+<%= link_to "Resize your photo", crop_path(@cocktail), class: "btn btn-primary"%>
       <% @cocktail.doses.each do |dose| %>
 
       <ul class="list-unstyled">

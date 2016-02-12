@@ -6,6 +6,12 @@ gem 'puma',           group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 gem 'figaro'
+gem 'cloudinary'
+gem "attachinary"
+gem "jquery-fileupload-rails"
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'remotipart', '~> 1.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -37,6 +43,9 @@ gem "autoprefixer-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+source 'https://rails-assets.org' do
+gem 'rails-assets-cropper'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
